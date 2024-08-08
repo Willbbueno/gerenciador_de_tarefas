@@ -4,11 +4,11 @@ App gerenciamento de tarefas
 
 Requisitos:
 
-- Adicionar uma nova tarefa
+- Adicionar uma nova tarefa - ok
 
-- Remover uma tarefa
+- Listar as tarefas - ok
 
-- Listar as tarefas
+FIXME:- Remover uma tarefa - Trabalhando aqui neste momento TODO:
 
 - Marcar uma tarefa como concluída
 
@@ -58,6 +58,7 @@ class GerenciadorDeTarefas() {
         println("Escolha uma opção:")
         println("1 - Adicionar tarefa")
         println("2 - Mostrar tarefas")
+        println("3 - Remover tarefa") // Próxima função a ser criada e configurada.
         println("0 - Sair")
         lerEntradaUsuario()
     }
@@ -67,6 +68,7 @@ class GerenciadorDeTarefas() {
         when(entrada){
             "1" -> adicionarTarefa()    
             "2" -> mostrarTarefas()
+            "3" -> removerTarefas()
             "0" -> if (entrada == "0") {
                 return
             } else {
@@ -75,17 +77,17 @@ class GerenciadorDeTarefas() {
             }
         }
 
-    // Adiciona tarefa
+    // Adiciona tarefass
     }
-fun adicionarTarefa() {
+    fun adicionarTarefa() {
     while (true) {
         println("Adicione uma tarefa: ")
         val entrada: String = readLine() ?: ""
         listaDeTarefas.add(entrada)
         println("Tarefa adicionada com sucesso!")
 
-        println("Digite 'sim' para adicionar uma nova tarefa ou qualquer tecla para voltar ao menu principal.")
-        val novaTarefaOuSair: String = readLine()?.toLowerCase() ?: ""
+        println("Digite 'sim' para adicionar uma nova tarefa ou qualquer tecla para voltar ao menu principal.") 
+        val novaTarefaOuSair: String = readLine()?.toLowerCase() ?: ""   // O parâmetro .toLowerCase() converte todas as strings para minusculo, isso facilita na verificação da entrada.
 
         if (novaTarefaOuSair == "sim") {
             continue
@@ -96,7 +98,7 @@ fun adicionarTarefa() {
     }
 }
    
-    // Mostra tarefa
+    // Mostra as tarefa
 
     fun mostrarTarefas() {
         if (listaDeTarefas.isEmpty()) {
@@ -105,6 +107,21 @@ fun adicionarTarefa() {
         } else {
             
         println("Tarefas: $listaDeTarefas ")
+
+        }
+    }
+
+    fun removerTarefas(){   //Parei aqui. TODO: 
+                            //Verificar entrada de caracteres especiais, pode ser erro na configuração das entradas do vs code. 
+                      FIXME://Lembrar de pesquisar mais sobre entrada de caracteres espis na construção dos códigos.
+                            // Precisarei reencrever a função adicionar tarefas para que um numero seja atribuido às tarefas, para que a função de remover possa escolher qual apagar.
+        
+        
+        
+        while(true) {     // Lembrar
+            mostrarTarefas()
+            println("Informe o número da tarefa que deseja remover: ")
+            val entrada: String = readLine()?: ""
         }
     }
 
